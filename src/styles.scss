@@ -6,8 +6,8 @@
 @include foundation-everything;
 
 // Import local styling dependencies
-@import "assets/scss/global";
 @import "assets/scss/variables";
+@import "assets/scss/global";
 
 // Import login from app styles
 .logo-splash {
