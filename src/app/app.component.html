@@ -1,16 +1,33 @@
-<div class="grid-container fluid">
+<div class="grid-container full">
   <div class="grid-x">
-    <div class="cell medium-6 yellow-div">
-      <!-- Your SVG Logo here -->
+
+    <!-- Yellow div -->
+    <div class="cell small-12 medium-6 logo-splash">
+      <!-- SVG logo goes here -->
+      <img src="../assets/images/humanforce-logo.svg" alt="Logo">
+      <div class="logo-splash-image-frame">
+        <img src="" alt="">
+      </div>
     </div>
-    <div class="cell medium-6 purple-div">
-      <h2>Login</h2>
+
+    <!-- Purple div -->
+    <div class="cell small-12 medium-6 login-section">
+      <div class="login-section-inner">
+        <h1>Login</h1>
       <form #loginForm="ngForm">
-        <input type="email" name="email" ngModel required placeholder="Email">
-        <input type="password" name="password" ngModel required placeholder="Password">
-        <button type="submit" [disabled]="!loginForm.valid">Login</button>
-        <a href="#" class="forgot-password">Forgot your password?</a>
+        <label>Email
+          <input type="email" name="email" ngModel required placeholder="Email">
+        </label>
+        <label>Password
+          <input type="password" name="password" ngModel required placeholder="Password">
+        </label>
+        <div class="button-group">
+          <button type="submit" [disabled]="!loginForm.valid" class="button">Login</button>
+          <a href="#" class="forgot-password" class="button clear">Forgot your password?</a>
+        </div>
       </form>
+      </div>
     </div>
+
   </div>
 </div>

@@ -1,37 +1,61 @@
 @import "../node_modules/foundation-sites/scss/foundation.scss";
 @include foundation-everything;
 
+// Import Google Font Poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+// Color variables
+$humanforce-yellow: rgb(255, 213, 64);
+$humanforce-blue: rgb(60, 71, 157);
+
 body {
   font-family: 'Poppins', sans-serif;
 }
 
-button {
-  font-family: 'Poppins', sans-serif;
-}
+.logo-splash {
+  background: $humanforce-yellow;
+  padding: 1rem;
 
-a {
-  font-family: 'Poppins', sans-serif;
-}
-
-
-.yellow-div {
-  background-color: yellow;
-  height: 100vh;
-
-  @include breakpoint(small only) {
-    height: auto;
+  img {
+    width: 100%;
   }
 }
 
-.purple-div {
-  background-color: purple;
-  height: 100vh;
+.login-section {
+  background: $humanforce-blue;
+  color: #fff;
+  padding: 1rem;
 
-  @include breakpoint(small only) {
-    height: auto;
+  h1 {
+    // Styles for the Login heading
+  }
+
+  form {
+    // Additional form styling
+  }
+
+  .button {
+    //
+  }
+
+  .forgot-password {
+    display: block;
+    color: #fff;
+    text-align: right;
+    // margin-top: 0.5rem;
   }
 }
 
-.forgot-password {
-  margin-left: 1rem;
-}
+
+  .logo-splash,
+  .login-section {
+    @include breakpoint(medium) {
+      height: 100vh;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 64px;
+    }
+  }
+
