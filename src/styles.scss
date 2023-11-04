@@ -66,10 +66,11 @@
 .login-section {
   background: $humanforce-blue;
   color: #fff;
-  padding: 20px;
+  padding: rem-calc(96 20 20 20);
 
   @include breakpoint(small only) {
     height: calc(100% - 33%); // account for the 33% height of .logo-splash in mobile
+    align-items: flex-start;
   }
 
   @include breakpoint(medium) {
