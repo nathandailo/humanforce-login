@@ -1,31 +1,57 @@
 <div class="grid-container full">
   <div class="grid-x">
 
-    <!-- Yellow div -->
+    <!-- Logo Splash -->
     <div class="cell small-12 medium-6 logo-splash">
-      <!-- SVG logo goes here -->
-      <img src="../assets/images/humanforce-logo.svg" alt="Logo">
+      <img src="assets/images/humanforce-logo.svg" class="logo" alt="Logo">
       <div class="logo-splash-image-frame">
-        <img src="" alt="">
+        <img src="assets/images/logo-photo.png" alt="">
       </div>
     </div>
 
-    <!-- Purple div -->
+    <!-- Login Section -->
     <div class="cell small-12 medium-6 login-section">
+      <div class="login-section-image-frame">
+        <img src="assets/images/login-photo.png" alt="">
+      </div>
       <div class="login-section-inner">
         <h1>Login</h1>
-      <form #loginForm="ngForm">
-        <label>Email
-          <input type="email" name="email" ngModel required placeholder="Email">
-        </label>
-        <label>Password
-          <input type="password" name="password" ngModel required placeholder="Password">
-        </label>
-        <div class="button-group">
-          <button type="submit" [disabled]="!loginForm.valid" class="button">Login</button>
-          <a href="#" class="forgot-password" class="button clear">Forgot your password?</a>
-        </div>
-      </form>
+        
+        <!-- Login Form Start -->
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+          <!-- Validation message box -->
+          <div *ngIf="(email.touched && email.invalid) || (password.touched && password.invalid)" class="callout alert">
+            <ul>
+              <!-- Only show email errors if the email field has been touched and is invalid -->
+              <li *ngIf="email.touched && email.errors?.['required']">Email is required.</li>
+              <li *ngIf="email.touched && email.errors?.['email']">Please enter a valid email.</li>
+          
+              <!-- Only show password errors if the password field has been touched and is invalid -->
+              <li *ngIf="password.touched && password.errors?.['required']">Password is required.</li>
+            </ul>
+          </div>
+          <label>
+            <span class="label-wrap screen-only">Email</span>
+            <input type="email" name="email" ngModel required email placeholder="you@companyname.com" #email="ngModel">
+          </label>
+          <label>
+            <span class="label-wrap screen-only">Password</span>
+            <input type="password" name="password" ngModel required placeholder="Password" #password="ngModel">
+          </label>
+
+          <!-- Submit and Forgot Password -->
+          <div class="button-group">
+            <button type="submit" [disabled]="!loginForm.valid" class="button login">
+              <span class="button-inner">Login</span>
+            </button>
+            <a href="#" class="button clear forgot-password">Forgot your password?</a>
+          </div>
+        </form>
+        <!-- Login Form End -->
+      </div>
+
+      <div class="footer">
+        <p class="small-print">© Humanforce Holdings Pty Ltd or its affiliates</p>
       </div>
     </div>
 

@@ -1,0 +1,44 @@
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body,
+app-root,
+.grid-container.full,
+.grid-x {
+  height: 100%;
+}
+
+.logo-splash,
+.login-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(medium) {
+    height: 100vh;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px;
+  }
+
+  .logo-splash-image-frame,
+  .login-section-image-frame {
+    display: none;
+
+    @include breakpoint(medium) {
+      display: block;
+      position: absolute;
+      height: rem-calc(281);
+      width: 100%;
+    }
+  }
+}
