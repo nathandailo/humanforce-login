@@ -1,0 +1,16 @@
+<div class="grid-container fluid">
+  <div class="grid-x">
+    <div class="cell medium-6 yellow-div">
+      <!-- Your SVG Logo here -->
+    </div>
+    <div class="cell medium-6 purple-div">
+      <h2>Login</h2>
+      <form #loginForm="ngForm">
+        <input type="email" name="email" ngModel required placeholder="Email">
+        <input type="password" name="password" ngModel required placeholder="Password">
+        <button type="submit" [disabled]="!loginForm.valid">Login</button>
+        <a href="#" class="forgot-password">Forgot your password?</a>
+      </form>
+    </div>
+  </div>
+</div>

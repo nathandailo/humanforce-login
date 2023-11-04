@@ -1,0 +1,37 @@
+@import "../node_modules/foundation-sites/scss/foundation.scss";
+@include foundation-everything;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.yellow-div {
+  background-color: yellow;
+  height: 100vh;
+
+  @include breakpoint(small only) {
+    height: auto;
+  }
+}
+
+.purple-div {
+  background-color: purple;
+  height: 100vh;
+
+  @include breakpoint(small only) {
+    height: auto;
+  }
+}
+
+.forgot-password {
+  margin-left: 1rem;
+}
