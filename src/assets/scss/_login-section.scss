@@ -1,0 +1,157 @@
+.login-section {
+  background: $humanforce-blue;
+  color: #fff;
+  padding: rem-calc(96 20);
+
+  @include breakpoint(small only) {
+    height: calc(100% - 33%); // account for the 33% height of .logo-splash in mobile
+    align-items: flex-start;
+  }
+
+  @include breakpoint(medium) {
+    padding: rem-calc(64);
+  }
+  
+  &::after {
+    @include breakpoint(medium) {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: rem-calc(80);
+      width: 100%;
+      height: rem-calc(4);
+      background-color: $humanforce-yellow;
+    }
+  }
+
+  .login-section-image-frame {
+    right: 0;
+    top: 0;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: rem-calc(80);
+      width: 100%;
+      height: rem-calc(4);
+      background-color: $humanforce-yellow;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: rem-calc(327);
+      top: 0;
+      width: rem-calc(4);
+      height: calc(100% - 50px);
+      background-color: $humanforce-yellow;
+    }
+
+    img {
+      position: absolute;
+      top: rem-calc(80);
+      right: 0;
+    }
+  }
+
+  .login-section-inner {
+    width: 100%;
+    max-width: rem-calc(592);
+  }
+
+  h1 {
+    font-size: rem-calc(33);
+  }
+
+  form {
+
+    label {
+      .screen-reader-only {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+
+      input[type="email"],
+      input[type="password"] {
+        border-radius: $field-border-radius;
+        padding: calc(24);
+        height: rem-calc(75);
+      }
+    }
+
+    .button-group {
+      .login {
+        // Override default foundation button styling
+        position: relative;
+        background-color: transparent;
+        padding: 0;
+  
+        .button-inner {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          //
+          padding: rem-calc(0 24);
+          height: rem-calc(58);
+          top: 0;
+          left: 0;
+          //
+          border: $button-border-width solid black;
+          border-radius: $button-border-radius;
+          //
+          background-color: $humanforce-purple;
+          //
+          font-size: rem-calc(20);
+          font-weight: 600;
+          color: black;
+          //
+          transition: top ease-in-out 300ms, left ease-in-out 300ms;
+
+          @include breakpoint(xlarge) {
+            padding: rem-calc(0 70);
+          }
+        }
+
+        &:hover:enabled {
+          .button-inner {
+            top: rem-calc(-10);
+            left: rem-calc(-10);
+            //
+            transition: top ease-in-out 300ms, left ease-in-out 300ms;
+          }
+        }
+
+        &::after {
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          display: block;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: $humanforce-green;
+          border-radius: $button-border-radius;
+        }
+      }
+    }
+  }
+
+  .forgot-password {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+
+    &:hover {
+      color: $humanforce-yellow
+    }
+  }
+}

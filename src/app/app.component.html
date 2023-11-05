@@ -19,25 +19,33 @@
         
         <!-- Login Form Start -->
         <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
-          <!-- Validation message box -->
-          <div *ngIf="(email.touched && email.invalid) || (password.touched && password.invalid)" class="callout alert">
-            <ul>
-              <!-- Only show email errors if the email field has been touched and is invalid -->
-              <li *ngIf="email.touched && email.errors?.['required']">Email is required.</li>
-              <li *ngIf="email.touched && email.errors?.['email']">Please enter a valid email.</li>
-          
-              <!-- Only show password errors if the password field has been touched and is invalid -->
-              <li *ngIf="password.touched && password.errors?.['required']">Password is required.</li>
-            </ul>
+          <!-- Validation message box
+          Check if email/password field has been touched and is invalid
+          -->
+          <div *ngIf="(email.touched && email.invalid) || (password.touched && password.invalid)" class="validation-message">
+            <div class="callout alert">
+              <ul>
+                <!-- Only show email errors if the email field has been touched and is invalid -->
+                <li *ngIf="email.touched && email.errors?.['required']">Email is required.</li>
+                <li *ngIf="email.touched && email.errors?.['email']">Please enter a valid email.</li>
+            
+                <!-- Only show password errors if the password field has been touched and is invalid -->
+                <li *ngIf="password.touched && password.errors?.['required']">Password is required.</li>
+              </ul>
+            </div>
           </div>
-          <label>
-            <span class="label-wrap screen-reader-only">Email</span>
-            <input type="email" name="email" ngModel required email placeholder="you@companyname.com" #email="ngModel">
-          </label>
-          <label>
-            <span class="label-wrap screen-reader-only">Password</span>
-            <input type="password" name="password" ngModel required placeholder="Password" #password="ngModel">
-          </label>
+          <div class="fields">
+            <!-- Email -->
+            <label>
+              <span class="label-wrap screen-reader-only">Email</span>
+              <input type="email" name="email" ngModel required email placeholder="you@companyname.com" #email="ngModel">
+            </label>
+            <!-- Password -->
+            <label>
+              <span class="label-wrap screen-reader-only">Password</span>
+              <input type="password" name="password" ngModel required placeholder="Password" #password="ngModel">
+            </label>
+          </div>
 
           <!-- Submit and Forgot Password -->
           <div class="button-group">
@@ -50,6 +58,7 @@
         <!-- Login Form End -->
       </div>
 
+      <!-- Footer -->
       <div class="footer">
         <p class="small-print">© Humanforce Holdings Pty Ltd or its affiliates</p>
       </div>
