@@ -12,7 +12,7 @@ export class AppComponent {
 
   submitted = false;
 
-  // For the purpose of this text, there's no backend validation so just logging this to console instead.
+  // For the purpose of this test, there's no backend validation so just logging this to console instead.
   onSubmit(form: NgForm) {
     this.submitted = true;
     if (form.valid) {
